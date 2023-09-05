@@ -10,7 +10,7 @@ image:
 serviceAccount:
   create: true
   annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::097267457133:role/marcus-eks-cluster-reverse-ip-service-oidc
+    arn: arn:aws:iam::097267457133:role/marcus-eks-cluster-reverse-ip-service-oidc
 
 service:
   port: 5678
