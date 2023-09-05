@@ -1,29 +1,27 @@
-namespace: dev
-appName: reverse-ip-service
+namespace: NAMESPACE
+appName: APP_NAME
 replicaCount: 1
 
 image:
-  repository: 097267457133.dkr.ecr.eu-central-1.amazonaws.com/reverse-ip-service
+  repository: IMAGE_REPO
   imagePullPolicy: Always
   tag: "latest"
 
 serviceAccount:
   create: true
   annotations:
-    arn: arn:aws:iam::097267457133:role/marcus-eks-cluster-reverse-ip-service-oidc
+    arn: SERVICE_ACCOUNT_ARN
 
 service:
-  port: 5678
+  port: SERVICE_PORT
   type: ClusterIP
-  externalTrafficPolicy: Local
 
 ingress:
   enabled: true
-  className: ""
-  host: demo.marcdomain.dev
+  host: DOMAIN_NAME
   pathType: ImplementationSpecific
   path: /
-  servicePort: 5678
+  servicePort: SERVICE_PORT
 
   tls: []
 
